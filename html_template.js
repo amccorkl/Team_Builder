@@ -33,8 +33,11 @@ const contactCard = (role, employeeName, id, email, officeNumber) => {
             <div class="details">
                 <ul class="uls">
                     <li id="id">${id}</li>
+                    //a href="mailto:${email}"
                     <li id="email">${email}</li>
                     <li id="office-number">${officeNumber}</li>
+                    id="github">${github}</li>
+                    //maybe school for the intern?
                 </ul>
             </div>
         </article> `
