@@ -1,4 +1,4 @@
-const createHtml = (company, cards) => {
+const createHtml = () => {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -6,24 +6,22 @@ const createHtml = (company, cards) => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./Assets/style.css">
-        <title>Team Info Builder ${companyName}</title>
+        <title>Team Info Builder </title>
     </head>
     <body>
         <header>
-            <h1 class="title">The Team's Profile Information ${teamName}</h1>
+            <h1 class="title">The Team's Profile Information</h1>
         </header>
         <main>
             <!-- cards' info starting here -->
-            <section class="contact-cards">
-                ${cards}
-            </section>
+            <section class="contact-cards"></section>
         </main>
         
     </body>
     </html> `
 }
 
-const contactCard = (role, employeeName, id, email, officeNumber) => {
+const contactCard = (title, employeeName, id, email, officeNumber, github, school) => {
     return `
         <article class="cards">
             <div class="card-header">
@@ -33,11 +31,12 @@ const contactCard = (role, employeeName, id, email, officeNumber) => {
             <div class="details">
                 <ul class="uls">
                     <li id="id">${id}</li>
-                    //a href="mailto:${email}"
-                    <li id="email">${email}</li>
+                    <li id="email">Email: <a href="mailto:${email}>${email}</a></li>
                     <li id="office-number">${officeNumber}</li>
-                    id="github">${github}</li>
+                    <li id="github">${github}</li>
                     //maybe school for the intern?
+                    <li id="school">${school}</li>
+
                 </ul>
             </div>
         </article> `
