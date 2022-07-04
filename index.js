@@ -59,7 +59,7 @@ const menu = function () {
     } else { 
 
         //this isn't working yet
-        fs.writeFileSync(path.join(__dirname, "./dist/index.html", createHtml(employeesEntered)))
+        fs.writeFileSync(path.join(__filename, "./dist/index.html", createHtml(employeesEntered)))
         //filter over each employee
     }
     
