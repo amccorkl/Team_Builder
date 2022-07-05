@@ -1,5 +1,5 @@
 const { managerPrompts, engineerPrompts, internPrompts } = require("./lib/prompts");
-const { createHtml, contactCard } = require("./html_template");
+const { createHtml, managerCard, engineerCard, internCard } = require("./html_template");
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
@@ -11,6 +11,7 @@ const path = require("path");
 //array for employees entered in database
 let employeesEntered = [];
 
+//prompt the manager first to input information about themself and then add other employees
 const init = function () {
   inquirer.prompt(managerPrompts).then(({ name, id, email, officeNumber }) => {
     const manager = new Manager(name, id, email, officeNumber);
@@ -20,6 +21,7 @@ const init = function () {
   });
 };
 
+//availability of manager to say to adding another employee after each entry
 const menu = function () {
   inquirer.prompt({
     type: "list",
@@ -38,11 +40,13 @@ const menu = function () {
         name: "Yes, Add another employee -- an Intern",
         value: "Intern",
       },
-      {
-        name: "Yes, Add another employee -- a different title",
-        value: "newTitle",
-      },
+      // {
+      //   name: "Yes, Add another employee -- a different title",
+      //   value: "newTitle",
+      // },
     ],
+
+    //if engineer title chosen
   }).then(answer => {
     if(answer.addAnother === "Engineer") {
         inquirer.prompt(engineerPrompts).then(({name, id, email, github}) => {
@@ -50,6 +54,7 @@ const menu = function () {
             employeesEntered.push(engineer);
             menu();
         })
+        //if intern title chosen
     } else if (answer.addAnother === "Intern") {
         inquirer.prompt(internPrompts).then(({name, id, email, school}) => {
             const intern = new Intern(name, id, email, school);
@@ -59,12 +64,20 @@ const menu = function () {
     } else { 
 
         //this isn't working yet
-        fs.writeFileSync(path.join(__filename, "./dist/index.html", createHtml(employeesEntered)))
-        //filter over each employee
-    }
-    
+        fs.writeFileSync("./dist/index.html", createHtml,(employeesEntered), function(err) {
+          if(err) {
+            return console.error(err);
+            
+            //not working yet
+          } else {
+            createHtml.filter(employeesEntered)
+            return (managerCard, engineerCard, internCard);
+          }
 
-    
+        });
+
+        
+    }
   })
 
 };

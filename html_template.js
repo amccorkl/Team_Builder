@@ -1,4 +1,5 @@
-const createHtml = () => {
+
+const createHtml = (cards) => {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -13,33 +14,63 @@ const createHtml = () => {
             <h1 class="title">The Team's Profile Information</h1>
         </header>
         <main>
-            <!-- cards' info starting here -->
-            <section class="contact-cards"></section>
+            <!-- contact cards' info here -->
+            <section class="contact-cards">${cards}</section>
         </main>
         
     </body>
     </html> `
 }
 
-const contactCard = (title, employeeName, id, email, officeNumber, github, school) => {
+const managerCard = (title, name, id, email, officeNumber) => {
     return `
         <article class="cards">
             <div class="card-header">
                 <h2 class="title">${title}</h2>
-                <h3 class="name">${employeeName}</h3>
+                <h3 class="name">${name}</h3>
             </div>
             <div class="details">
                 <ul class="uls">
                     <li id="id">${id}</li>
-                    <li id="email">Email: <a href="mailto:${email}>${email}</a></li>
+                    <li id="email"> Email: <a href="mailto:${email}">${email}</a></li>
                     <li id="office-number">${officeNumber}</li>
-                    <li id="github">${github}</li>
-                    //maybe school for the intern?
-                    <li id="school">${school}</li>
-
                 </ul>
             </div>
         </article> `
 }
 
-module.exports = {createHtml, contactCard}
+const engineerCard = (title, name, id, email, github) => {
+    return `
+        <article class="cards">
+            <div class="card-header">
+                <h2 class="title">${title}</h2>
+                <h3 class="name">${name}</h3>
+            </div>
+            <div class="details">
+                <ul class="uls">
+                    <li id="id">${id}</li>
+                    <li id="email"> Email: <a href="mailto:${email}">${email}</a></li>
+                    <li id="github">${github}</li>
+                </ul>
+            </div>
+        </article> `
+}
+
+const internCard = (title, name, id, email, school) => {
+    return `
+        <article class="cards">
+            <div class="card-header">
+                <h2 class="title">${title}</h2>
+                <h3 class="name">${name}</h3>
+            </div>
+            <div class="details">
+                <ul class="uls">
+                    <li id="id">${id}</li>
+                    <li id="email"> Email: <a href="mailto:${email}">${email}</a></li>
+                    <li id="school">${school}</li>
+                </ul>
+            </div>
+        </article> `
+}
+
+module.exports = {createHtml, managerCard, engineerCard, internCard}
