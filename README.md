@@ -44,22 +44,9 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 
 ## Getting Started
 
-A video submission, [Npm run tests and node.js video of the application](https://drive.google.com/file/d/1ZkJjHKi-dQpWkEl8tx9aLnMPj-tPKw5V/view?usp=sharing).
-The application uses [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
+The application uses [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user with [a video submission of how the application code works](https://drive.google.com/file/d/1ZkJjHKi-dQpWkEl8tx9aLnMPj-tPKw5V/view?usp=sharing) and the [browser user interface](https://drive.google.com/file/d/1MdNLebZG6RmyQdy8ESeqcM5UXMI6vCMF/view?usp=sharing).The application will be invoked by using the following command:
 
 ```bash
 node index.js
 ```
-
-## Review
-
-You are required to submit the following for review:
-
-* A walkthrough video that demonstrates the functionality of the application and passing tests.
-
-* A sample HTML file generated using your application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
 
