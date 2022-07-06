@@ -24,7 +24,7 @@ const createHtml = (employeesEntered) => {
     </head>
     <body>
         <header>
-            <h1 class="title">The Team's Profile Information</h1>
+            <h1 class="title">The Team's Info</h1>
         </header>
         <main>
             <!-- contact cards' info here -->
@@ -44,9 +44,9 @@ const managerCard = (title, name, id, email, officeNumber) => {
             </div>
             <div class="details">
                 <ul class="uls">
-                    <li id="id">${id}</li>
+                    <li id="id">Id#: ${id}</li>
                     <li id="email"> Email: <a href="mailto:${email}">${email}</a></li>
-                    <li id="office-number">${officeNumber}</li>
+                    <li id="office-number">Office #: ${officeNumber}</li>
                 </ul>
             </div>
         </article> `
@@ -61,9 +61,10 @@ const engineerCard = (title, name, id, email, github) => {
             </div>
             <div class="details">
                 <ul class="uls">
-                    <li id="id">${id}</li>
+                    <li id="id">Id#: ${id}</li>
                     <li id="email"> Email: <a href="mailto:${email}">${email}</a></li>
-                    <li id="github">${github}</li>
+
+                    <li id="github"<a href="https://github.com">Github: ${github}</li>
                 </ul>
             </div>
         </article> `
@@ -78,9 +79,9 @@ const internCard = (title, name, id, email, school) => {
             </div>
             <div class="details">
                 <ul class="uls">
-                    <li id="id">${id}</li>
+                    <li id="id">Id#: ${id}</li>
                     <li id="email"> Email: <a href="mailto:${email}">${email}</a></li>
-                    <li id="school">${school}</li>
+                    <li id="school">School: ${school}</li>
                 </ul>
             </div>
         </article> `

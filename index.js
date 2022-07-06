@@ -41,10 +41,6 @@ const menu = function () {
         name: "Yes, Add another employee -- an Intern",
         value: "Intern",
       },
-      // {
-      //   name: "Yes, Add another employee -- a different title",
-      //   value: "newTitle",
-      // },
     ],
 
     //if engineer title chosen
@@ -65,7 +61,7 @@ const menu = function () {
             menu();
         })
     } else { 
-      //pushing the array to the   
+      //pushing the array to the html module
       console.log("Thank you for entering your employees.");
       let finalOutput = generateHtml(employeesEntered);
       createHtml(finalOutput);

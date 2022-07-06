@@ -6,8 +6,8 @@
 }
 
 body {
-    font-size: 18px;
-    line-height: 1.3rem;
+    /* font-size: 18px; */
+    line-height: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     color: blue;
 
@@ -27,15 +27,15 @@ header {
 }
 
 .title {
-    font: size 250%;
-    flex: 1 0 100%;
+    font: size 150%;
+    flex: 1 1 100%;
     text-align:center;
 }
 
 .contact-cards {
     margin: 2rem 1rem;
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     flex-flow: row wrap;
     justify-content:center;
 }
@@ -48,8 +48,9 @@ p {
 }
 
 .cards {
-    box-shadow: 5px 5px 5px grey;
-    flex: 1 0 100%;
+    border: 1px black solid;
+    box-shadow: 5px 5px 5px rgb(120, 120, 120);
+    flex: 1 1 100%;
     border-radius: 10px 10px 0 0;
 
 }
@@ -79,7 +80,7 @@ p {
 }
 
 li {
-    border: solid 1px whitesmoke;
+    border: solid 2px rgb(232, 231, 231);
     padding: 1rem;
     flex: 1 0 100%;
 }
