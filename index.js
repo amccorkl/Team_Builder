@@ -1,5 +1,5 @@
 const { managerPrompts, engineerPrompts, internPrompts } = require("./lib/prompts");
-const generateHtml = require("./html_template");
+const generateHtml = require("./src/html_template");
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
@@ -74,9 +74,9 @@ const menu = function () {
 const createHtml = (template) => {
   fs.writeFile("./dist/html_template.html", template, (error) => {
     if(error) {
-      console.log(error);
+      console.error(error);
     } else {
-      console.log("Your team profile was successfully built.");
+      console.info("Your team profile was successfully built.");
     }
   })
 };

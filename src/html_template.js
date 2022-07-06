@@ -2,6 +2,7 @@
 
 const createHtml = (employeesEntered) => {
     let html = [];
+
     for (let i = 0; i < employeesEntered.length; i++) {
         if (employeesEntered[i].getTitle() === "Manager") {
             html.push(managerCard(employeesEntered[i].name, "Manager", employeesEntered[i].id, employeesEntered[i].email, employeesEntered[i].officeNumber))
@@ -19,7 +20,7 @@ const createHtml = (employeesEntered) => {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="../assets/style.css">
         <title>Team Info Builder </title>
     </head>
     <body>
@@ -64,7 +65,7 @@ const engineerCard = (title, name, id, email, github) => {
                     <li id="id">Id#: ${id}</li>
                     <li id="email"> Email: <a href="mailto:${email}">${email}</a></li>
 
-                    <li id="github"<a href="https://github.com">Github: ${github}</li>
+                    <li id="github">Github: <a href="https://www.github.com/${github}" target="_blank"> ${github}</a></li>
                 </ul>
             </div>
         </article> `
