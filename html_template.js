@@ -1,12 +1,25 @@
 
-const createHtml = (cards) => {
+
+const createHtml = (employeesEntered) => {
+    let html = [];
+    for (let i = 0; i < employeesEntered.length; i++) {
+        if (employeesEntered[i].getTitle() === "Manager") {
+            html.push(managerCard(employeesEntered[i].name, "Manager", employeesEntered[i].id, employeesEntered[i].email, employeesEntered[i].officeNumber))
+        }
+        if (employeesEntered[i].getTitle() === "Engineer") {
+            html.push(engineerCard(employeesEntered[i].name, "Engineer", employeesEntered[i].id, employeesEntered[i].email, employeesEntered[i].github))
+        }
+        if (employeesEntered[i].getTitle() === "Intern") {
+            html.push(internCard(employeesEntered[i].name, "Intern", employeesEntered[i].id, employeesEntered[i].email, employeesEntered[i].school))
+        }
+    }
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./Assets/style.css">
+        <link rel="stylesheet" href="./style.css">
         <title>Team Info Builder </title>
     </head>
     <body>
@@ -15,12 +28,12 @@ const createHtml = (cards) => {
         </header>
         <main>
             <!-- contact cards' info here -->
-            <section class="contact-cards">${cards}</section>
+            <section class="contact-cards">${html.join("")}</section>
         </main>
         
     </body>
     </html> `
-}
+};
 
 const managerCard = (title, name, id, email, officeNumber) => {
     return `
@@ -73,4 +86,4 @@ const internCard = (title, name, id, email, school) => {
         </article> `
 }
 
-module.exports = {createHtml, managerCard, engineerCard, internCard}
+module.exports = createHtml;
